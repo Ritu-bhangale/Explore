@@ -485,9 +485,9 @@ footer p {
   }
 }
 a.back{
-  position: absolute;
-  top: 810vh;
-  left: 45vw;
+  position: fixed;
+  bottom: 5vh;
+  left: 5vw;
   background-color: #ffe818;
   padding: 3vh 2vw;
   text-decoration: none;
