@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <link rel="shortcut icon" type="image/jpg" href="../solar system/images/earth.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+</head>
+<body>
+    <main>
+      <section :style="{ 'background-image': 'url(' + selectedFlagSrc + ')' }">
+        <div class="left-div">
+          <div class="display">
+            <div class="country-name">
+              <img :src="selectedFlagSrc">
+              {{ selectedName }}
+            </div>
+            <div class="country-info">
+              <div><strong>Code: </strong>{{ selectedCode }}</div>
+              <div><strong>Capital: </strong>{{ selectedCapital }}</div>
+              <div><strong>Region: </strong>{{ selectedSubregion }}</div>
+              <div><strong>Language: </strong>{{ selectedLanguage }}</div>
+              <div><strong>Currency: </strong>{{ selectedCurrency }}</div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <nav>
+      <div class="country-search">
+        <input type="text" placeholder="Search country" autocomplete="off" v-model="search">
+      </div>
+      <div class="country-list">
+        <div class="country" v-for="country in countries" @click="selectCountry(country)">
+          <img :src="getFlagSrc(country)">
+          {{ getName(country) }}
+        </div>
+      </div>
+    </nav>
+    </main>
+    <script src="index.vue"></script>
+  </body>
+</html>
