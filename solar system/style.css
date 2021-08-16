@@ -485,6 +485,7 @@ footer p {
   }
 }
 a.back{
+	
   position: fixed;
   bottom: 5vh;
   left: 5vw;
